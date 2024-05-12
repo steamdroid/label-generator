@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  width: 100%;
+  max-width: 242px;
+  margin: 0 auto;
+}
+@media print {
+  .container {
+    margin: 0;
+    max-width: 100%;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+  .pos-label {
+    border: none;
+  }
+}

@@ -5,7 +5,7 @@
       :mode="mode"
       @setTitle="(input) => (title = input)"
       @setDescription="(input) => (description = input)"
-      @setPic="(input) => (pic = input)"
+      @setImageSrcString="(input) => (imageSrcString = input)"
       @setMode="(val) => (mode = val)"
     />
   </main>
@@ -20,17 +20,19 @@ import QRCode from 'qrcode';
 const mode = ref('pic');
 const title = ref('');
 const description = ref('');
-const pic = ref('');
+const imageSrcString = ref('');
 const icon = ref('');
 
-watch([mode, pic], async () => {
+watch([mode, imageSrcString], async () => {
   switch (mode.value) {
     case 'pic':
-      icon.value = pic.value;
+      icon.value = imageSrcString.value;
       break;
     case 'qr':
-      if (pic.value) {
-        icon.value = await QRCode.toDataURL(pic.value);
+      if (imageSrcString.value === '') {
+        icon.value = '';
+      } else {
+        icon.value = await QRCode.toDataURL(imageSrcString.value);
       }
       break;
   }

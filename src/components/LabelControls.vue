@@ -17,9 +17,10 @@
     <input @input="handleTitleChange" type="text" name="title" placeholder="Название" />
     <input @input="handleDescriptionChange" type="text" name="desc" placeholder="Описание" />
     <input
-      @input="handlePicChange"
+      @input="handleImageSrcChange"
       type="text"
-      name="pic"
+      name="imageSrcString"
+      v-model="imageSrcString"
       :placeholder="mode === 'pic' ? 'Иконка' : 'Ссылка'"
     />
     <button type="button" @click="printLabel">Напечатать</button>
@@ -42,17 +43,21 @@ const modes = ref([
   }
 ]);
 
-const emit = defineEmits(['setTitle', 'setDescription', 'setPic', 'setMode']);
+const imageSrcString = ref('');
+
+const emit = defineEmits(['setTitle', 'setDescription', 'setImageSrcString', 'setMode']);
 const handleTitleChange = (e) => {
   emit('setTitle', e.target.value);
 };
 const handleDescriptionChange = (e) => {
   emit('setDescription', e.target.value);
 };
-const handlePicChange = (e) => {
-  emit('setPic', e.target.value);
+const handleImageSrcChange = () => {
+  emit('setImageSrcString', imageSrcString.value);
 };
 const handleModeChange = (newMode) => {
+  imageSrcString.value = '';
+  handleImageSrcChange(); // TODO refactor
   emit('setMode', newMode);
 };
 const printLabel = () => window.print();

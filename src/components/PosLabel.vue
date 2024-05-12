@@ -23,9 +23,9 @@ defineProps({
   display: flex;
   flex-direction: row;
   width: 240px;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Times New Roman';
-  padding: 14px 5px;
+  padding: 12px 5px;
   word-break: break-all;
   line-height: 1.1em;
   border: 1px dashed gray;
@@ -33,16 +33,18 @@ defineProps({
 
 .pos-label__title {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.4em;
   line-height: 1em;
   margin: 0;
   margin-bottom: 10px;
+  max-width: 142px;
 }
 
 .pos-label__desc {
   font-size: 1em;
   line-height: 1em;
   margin: 0;
+  max-width: 140px;
 }
 
 .pos-label__pic {

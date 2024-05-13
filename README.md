@@ -1,35 +1,24 @@
-# label-generator
+# Генератор этикеток
 
-This template should help get you started developing with Vue 3 in Vite.
+Небольшое приложение для печати этикеток на термопринтере.
+Позволяет печатать этикетку с иконкой из набора [LineAwesome](https://icons8.com/line-awesome) или QR-кодом.
 
-## Recommended IDE Setup
+[Демо](https://steamdroid.github.io/label-generator/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Настройка и запуск проекта
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Разработка
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Сборка
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

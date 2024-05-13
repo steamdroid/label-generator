@@ -17,6 +17,10 @@
     display: none !important;
   }
   .pos-label {
+    border: none !important;
+  }
+
+  main[class] {
     border: none;
   }
 }

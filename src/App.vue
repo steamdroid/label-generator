@@ -1,13 +1,15 @@
 <template>
-  <main class="container">
-    <PosLabel :mode="mode" :title="title" :description="description" :icon="icon" />
-    <LabelControls
-      :mode="mode"
-      @setTitle="(input) => (title = input)"
-      @setDescription="(input) => (description = input)"
-      @setImageSrcString="(input) => (imageSrcString = input)"
-      @setMode="(val) => (mode = val)"
-    />
+  <main class="p-6 max-w-sm mx-auto my-auto border-2 rounded-xl">
+    <div class="container">
+      <PosLabel :mode="mode" :title="title" :description="description" :icon="icon" />
+      <LabelControls
+        :mode="mode"
+        @setTitle="(input) => (title = input)"
+        @setDescription="(input) => (description = input)"
+        @setImageSrcString="(input) => (imageSrcString = input)"
+        @setMode="(val) => (mode = val)"
+      />
+    </div>
   </main>
 </template>
 <script setup>
